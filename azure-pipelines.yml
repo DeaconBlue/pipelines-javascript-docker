@@ -14,7 +14,7 @@ variables:
   dockerRegistryServiceConnection: '66872db2-812c-444a-9c00-468c80d4730f'
   imageRepository: 'deaconbluepipelinesjavascriptdocker'
   containerRegistry: 'az0402acr.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: '**/src/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'az0402acr80a8-auth'
 
@@ -73,8 +73,8 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/src/manifests/deployment.yml
+                $(Pipeline.Workspace)/src/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
@@ -114,8 +114,8 @@ stages:
               action: deploy
               namespace: $(k8sNamespaceForPR)
               manifests: |
-                $(Pipeline.Workspace)/manifests/deployment.yml
-                $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/src/manifests/deployment.yml
+                $(Pipeline.Workspace)/src/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
