@@ -1,16 +1,16 @@
 apiVersion : apps/v1beta1
 kind: Deployment
 metadata:
-  name: deaconbluepipelinesjavascriptdocker 
+  name: weatherdotnetdocker 
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: deaconbluepipelinesjavascriptdocker 
+        app: weatherdotnetdocker 
     spec:
       containers:
-        - name: deaconbluepipelinesjavascriptdocker 
-          image: az0402acr.azurecr.io/deaconbluepipelinesjavascriptdocker
+        - name: weatherdotnetdocker 
+          image: az0402acr.azurecr.io/weatherdotnetdocker
           ports:
-          - containerPort: 8080
+          - containerPort: 5000

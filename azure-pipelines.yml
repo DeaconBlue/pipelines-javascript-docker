@@ -45,12 +45,12 @@ stages:
         tags: |
           $(tag)
 
-    - task: PublishPipelineArtifact@1
-      inputs:
-        artifactName: 'manifests'
-        path: 'src/manifests'      
-    # - upload: manifests
-    #   artifact: manifests
+    # - task: PublishPipelineArtifact@1
+    #   inputs:
+    #     artifactName: 'manifests'
+    #     path: 'src/manifests'      
+    - upload: manifests
+      artifact: manifests
 
 - stage: Deploy
   displayName: Deploy stage
@@ -79,8 +79,8 @@ stages:
             inputs:
               action: deploy
               manifests: |
-                $(Pipeline.Workspace)/src/manifests/deployment.yml
-                $(Pipeline.Workspace)/src/manifests/service.yml
+                $(Pipeline.Workspace)/manifests/deployment.yml
+                $(Pipeline.Workspace)/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
@@ -120,8 +120,8 @@ stages:
               action: deploy
               namespace: $(k8sNamespaceForPR)
               manifests: |
-                $(Pipeline.Workspace)/src/manifests/deployment.yml
-                $(Pipeline.Workspace)/src/manifests/service.yml
+                $(Pipeline.Workspace)/manifests/deployment.yml
+                $(Pipeline.Workspace)/manifests/service.yml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |

@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: deaconbluepipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: deaconbluepipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: deaconbluepipelinesjavascriptdocker 
+          image: az0402acr.azurecr.io/deaconbluepipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
