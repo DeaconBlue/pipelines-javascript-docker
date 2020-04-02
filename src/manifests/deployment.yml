@@ -13,4 +13,4 @@ spec:
         - name: deaconbluepipelinesjavascriptdocker #weatherdotnetdocker 
           image: az0402acr.azurecr.io/deaconbluepipelinesjavascriptdocker #weatherdotnetdocker
           ports:
-          - containerPort: 5000
+          - containerPort: 80
