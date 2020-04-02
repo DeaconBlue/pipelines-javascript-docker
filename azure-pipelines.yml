@@ -17,7 +17,7 @@ variables:
   imageRepository: 'deaconbluepipelinesjavascriptdocker'
   containerRegistry: 'az0402acr.azurecr.io'
   dockerfilePath: '**/src/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: 'weatherapp-$(Build.BuildId)'
   imagePullSecret: 'az0402acr80a8-auth'
 
   # Agent VM image name
