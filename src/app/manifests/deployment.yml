@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: weatherdotnetdocker 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: weatherdotnetdocker 
+    spec:
+      containers:
+        - name: weatherdotnetdocker 
+          image: az0402acr.azurecr.io/weatherdotnetdocker
+          ports:
+          - containerPort: 5000
