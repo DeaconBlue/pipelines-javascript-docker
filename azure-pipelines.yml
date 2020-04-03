@@ -13,7 +13,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '66872db2-812c-444a-9c00-468c80d4730f'
+  dockerRegistryServiceConnection: 'az0402app-default' #'66872db2-812c-444a-9c00-468c80d4730f'
   imageRepository: 'deaconbluepipelinesjavascriptdocker'
   containerRegistry: 'az0402acr.azurecr.io'
   dockerfilePath: '**/src/Dockerfile'
